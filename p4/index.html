@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<!-- Keelan Matthews 21549967 -->
+<head>
+    <title>Chit Chat</title>
+</head>
+
+<body>
+    <div id="app">
+        <div id="header"><p>Chit Chat</p></div>
+        <div id="container">
+            <div id="message-group" v-for="(messages,index) in messages">
+                <p>{{users[index]}}</p>
+                <div id="text-message">
+                    <p>{{messages}}</p>
+                    <div>
+                        <small>{{timestamps[index]}}</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="input">
+            <input-message/>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/vuex@next"></script>
+    <script src="./main.js"></script>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #app {
+            background-color: rgb(221, 221, 221);
+            width: 600px;
+            margin: 0 auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgb(139, 139, 139);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: space-between;
+            height: 700px;
+            margin-top: 20px;
+        }
+
+        #header {
+            width: 100%;
+            background-color: rgb(65, 129, 62);
+            height: 70px;
+            color: white;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            border-radius: 10px 10px 0 0;
+            margin-bottom: 10px;
+        }
+
+        #text-message {
+            background-color: rgb(65, 129, 62);
+            border-radius: 10px;
+            max-width: 200px;
+            padding: 10px;
+            color: white;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            margin-right: 5px;
+            word-wrap: break-word;
+        }
+
+        #text-message>div {
+            padding-top: 4px;
+            text-align: right;
+        }
+
+        #message-group {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            margin-bottom: 7px;
+        }
+
+        #message-group>p {
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            text-align: right;
+            font-weight: bold;
+            margin: 7px;
+        }
+
+        #container {
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+        }
+
+        #input {
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+
+        #input input {
+            height: 40px;
+            border: 2px solid rgb(177, 177, 177);
+            border-radius: 10px;
+            padding-left: 9px;
+        }
+
+        #user-input {
+            width: 120px;
+            margin-right: 10px;
+        }
+
+        #message-input {
+            width: 350px;
+        }
+
+        #send-button {
+            background-color: rgb(65, 129, 62);
+            color: white;
+            border-radius: 100%;
+            padding: 15px;
+            font-size: 25px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+    </style>
+</body>
+</html>
